@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUSKY NO LAG 3.2 - Otimização para Point Blank</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        :root {
+            --primary-color: #FF5500;
+            --secondary-color: #0066CC;
+            --accent-color: #FFD700;
+            --dark-color: #222;
+            --light-color: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0066CC, #004080);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero {
+            background: url('https://public.youware.com/users-website-assets/prod/6f2e343d-7f89-404a-b63b-2b49cb926526/g1d4d4b1165b1e4d95f32131089864507ccd08d224d0f0e97215c93c9afa8cfe6db063963636bbbd75f83806779a13e26eeb6fb4141500337943311a3ba73c10a_640.jpg') center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #ff7730;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 85, 0, 0.4);
+        }
+
+        .features {
+            padding: 80px 0;
+            background: #111;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--accent-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .feature-description {
+            color: #ccc;
+        }
+
+        .optimization {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #111, #0a0a0a);
+        }
+
+        .optimization-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .optimization-image {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 40px;
+        }
+
+        .optimization-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .optimization-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .optimization-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .optimization-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .optimization-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .optimization-list li::before {
+            content: "✅";
+            margin-right: 10px;
+        }
+
+        .download {
+            padding: 80px 0;
+            text-align: center;
+            background: #0c0c0c;
+        }
+
+        .download h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .download p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .key-section {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .key-section h3 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .key-code {
+            font-family: monospace;
+            font-size: 1.3rem;
+            padding: 10px;
+            background: #333;
+            border-radius: 5px;
+            letter-spacing: 2px;
+            color: white;
+        }
+
+        footer {
+            background: #080808;
+            padding: 20px 0;
+            text-align: center;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 350px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .optimization-content {
+                flex-direction: column;
+            }
+            .optimization-image {
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">HUSKY NO LAG</div>
+            <div class="tagline">A solução definitiva para otimizar seu Point Blank</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h1>🎯 HUSKY NO LAG 3.2 — OTIMIZAÇÃO TOTAL PARA POINT BLANK! 🚀</h1>
+            <p>Feito sob medida para quem joga Point Blank e quer FPS mais altos, menos LAG e resposta instantânea</p>
+            <a href="#download" class="cta-button">BAIXAR AGORA</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Características Principais</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔥</div>
+                    <h3 class="feature-title">Energia Config</h3>
+                    <p class="feature-description">Ajuste automático para Desempenho Máximo — jogue PB com o máximo de potência!</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Ponto de Restauração</h3>
+                    <p class="feature-description">Segurança total: crie um ponto de restauração antes de aplicar otimizações.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Otimização completa</h3>
+                    <p class="feature-description">CPU, GPU, HDD/SSD, RAM e Windows - tudo otimizado para Point Blank.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="optimization" id="optimization">
+        <div class="container">
+            <h2 class="section-title">Otimização Completa</h2>
+            <div class="optimization-content">
+                <div class="optimization-image">
+                    <img src="cllpv23jb5.png" alt="Husky No Lag Optimization" style="width: 100%; max-width: 550px; margin-bottom: 20px;">
+                    <img src="https://public.youware.com/users-website-assets/prod/6f2e343d-7f89-404a-b63b-2b49cb926526/gb12bcac43b6622da26c8eb6ddd1164363f81447d18ab96c5e464ed567e82e2f7d288596dbaec33b53f0100fa9599100648348dfabf0e5d04de8d7e6e7caa83ea_640.png" alt="Husky No Lag Optimization">
+                </div>
+                <div class="optimization-text">
+                    <h2>Otimizações Poderosas</h2>
+                    <ul class="optimization-list">
+                        <li>CPU — desempenho máximo para evitar quedas de FPS</li>
+                        <li>GPU — gráficos mais fluidos e estáveis</li>
+                        <li>HDD / SSD — carregamento mais rápido de mapas e recursos</li>
+                        <li>MEMÓRIA RAM — gerenciamento inteligente para evitar travamentos</li>
+                        <li>WINDOWS — sistema ajustado para o melhor desempenho no PB</li>
+                        <li>TEMPO DE RESPOSTA — comandos mais rápidos, reação instantânea</li>
+                        <li>PING — redução de latência, conexão mais estável nos servidores!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Funções Essenciais para o PB</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">💥</div>
+                    <h3 class="feature-title">FPS MAX</h3>
+                    <p class="feature-description">Desbloqueio total de frames por segundo para uma experiência mais fluida.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">TELA CHEIA automática</h3>
+                    <p class="feature-description">Jogue sem distrações com a ativação automática do modo tela cheia.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">FAST SERVER</h3>
+                    <p class="feature-description">Conexão rápida com os melhores servidores para reduzir latência.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">GAMER OPTIMIZER</h3>
+                    <p class="feature-description">Ajustes avançados focados no Point Blank para performance máxima.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">FLUIDEZ MÁXIMA</h3>
+                    <p class="feature-description">Gameplay sem engasgos, suave e estável para melhor experiência.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">AUTORUNAMPLIADOR</h3>
+                    <p class="feature-description">Amplifica automaticamente a sua visão para 100% para melhor precisão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download" id="download">
+        <div class="container">
+            <h2>Baixe o HUSKY NO LAG 3.2 Agora!</h2>
+            <p>Seja mais rápido, preciso e imbatível no Point Blank! Feito especialmente para quem quer vencer!</p>
+            <a href="https://www.sendspace.com/file/9iufip" class="cta-button" target="_blank">DOWNLOAD</a>
+
+            <div class="key-section">
+                <h3>Chave de Ativação:</h3>
+                <div class="key-code">ZGSH-4UUU-5BBF</div>
+                <p style="margin-top: 15px;">Teste Grátis 1 dia</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 HUSKY NO LAG 3.2 - A melhor otimização para Point Blank</p>
+        </div>
+    </footer>
+</body>
+
+</html>
