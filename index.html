@@ -406,14 +406,104 @@
             <p>Seja mais rápido, preciso e imbatível no Point Blank! Feito especialmente para quem quer vencer!</p>
             <a href="https://github.com/huskynolag/HuskyNoLag/releases/download/6.0/HNLPB.5.9.exe" class="cta-button" target="_blank">DOWNLOAD</a>
 
-            <div class="key-section">
-                <h3><p style="color: red;">Faça seu teste gratis por 24hs</p> Chave de Ativação: </h3>
-                <div class="key-code">KEYAUTH-vOQsjR-4IBAln-pVqIKX-l8jG7w-SqPS3I-vr73Vg</div>
+            <div class="key-section" id="keySection" style="display: none;">
+                <h3><p style="color: red;">Faça seu teste grátis por 24hs</p> Chave de Ativação: </h3>
+                <div class="key-code">KEY LIBERADA APÓS VALIDAÇÃO</div>
+                <p style="margin-top: 15px;">Tenha melhor experiência! Por R$ 25,00 Mensal <a href="https://contate.me/5583998929124" target="_blank" rel="noopener noreferrer">Compre sua key Aqui!</a></p>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <input type="text" id="inputKey" placeholder="Digite sua Key aqui" style="padding: 10px; border-radius: 5px; width: 300px;">
+                <button onclick="verificarKey()" style="padding: 10px 20px; border-radius: 5px; background-color: #FF5500; color: white; cursor: pointer;">Verificar Key</button>
+                <p id="status" style="margin-top: 10px;"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function verificarKey() {
+            const key = document.getElementById('inputKey').value.trim();
+            const statusDiv = document.getElementById('status');
+            const keySection = document.getElementById('keySection');
+
+            const keysDeTeste = [
+                "KEYAUTH-vOQsjR-4IBAln-pVqIKX-l8jG7w-SqPS3I-vr73Vg",
+                "KEYAUTH-MZ6jqD-JofGXG-JTKSLd-HAp0xz-SvP9ug-4CqvIR",
+                "KEYAUTH-MAqVKX-AEh1xy-zJ0oU7-a6ChmK-eKOf3J-HoMDAb",
+                "KEYAUTH-BrfHMU-UA4CgE-s1CxV5-wBK1zE-CEJdr4-yjRFBa",
+                "KEYAUTH-AMk7j3-VCrcp3-v5vfdT-yJaDOu-2WBiOm-U4BrDb",
+                "KEYAUTH-9tzxUv-dHutxV-BIq1h4-HKHFYm-k0okvf-A7Edwn",
+                "KEYAUTH-1aBPV1-LpQzQo-b4vF5j-01hWtM-t4jmRQ-WKaYw4",
+                "KEYAUTH-0ZigZM-UGJaqs-tqHS73-qxzXuU-yDiTYD-pZXDRr"
+            ];
+
+            if (key === "") {
+                statusDiv.innerText = "Por favor, digite uma key.";
+                statusDiv.style.color = "red";
+                keySection.style.display = "none";
+                return;
+            }
+
+            if (keysDeTeste.includes(key)) {
+                statusDiv.innerText = "✅ Key válida! Liberando conteúdo de Teste...";
+                statusDiv.style.color = "green";
+                keySection.style.display = "block";
+            } else {
+                statusDiv.innerText = "❌ Key inválida ou já utilizada.";
+                statusDiv.style.color = "red";
+                keySection.style.display = "none";
+            }
+        }
+    </script>
                 
                 
                 <p style="margin-top: 15px;">Tenha melhor experincia! Por R$ 25,00 Mensal <a href="https://contate.me/5583998929124" target="_blank" rel="noopener noreferrer">Compre sua key Aqui!</a></p>
             </div>
+            <div style="margin-top: 20px;">
+            <input type="text" id="inputKey" placeholder="Digite sua Key aqui" style="padding: 10px; border-radius: 5px; width: 300px;">
+            <button onclick="verificarKey()" style="padding: 10px 20px; border-radius: 5px; background-color: #FF5500; color: white; cursor: pointer;">Verificar Key</button>
+            <p id="status" style="margin-top: 10px;"></p>
         </div>
+    </div>
+</section>
+
+<script>
+    async function verificarKey() {
+        const key = document.getElementById('inputKey').value.trim();
+        const statusDiv = document.getElementById('status');
+        const keySection = document.getElementById('keySection');
+
+        const appName = "SEU_APP_NAME";  // Troque pelo seu app name no KeyAuth
+        const ownerID = "SEU_OWNER_ID";  // Troque pelo seu OwnerID no KeyAuth
+
+        if (key === "") {
+            statusDiv.innerText = "Por favor, digite uma key.";
+            statusDiv.style.color = "red";
+            return;
+        }
+
+        try {
+            const response = await fetch(`https://keyauth.win/api/seller/?sellerkey=${ownerID}&type=verify&key=${key}&app=${appName}`);
+            const data = await response.json();
+
+            if (data.success) {
+                statusDiv.innerText = "✅ Key válida! Liberando o conteúdo de Teste...";
+                statusDiv.style.color = "green";
+                keySection.style.display = "block";
+            } else {
+                statusDiv.innerText = "❌ Key inválida, expirada ou já utilizada.";
+                statusDiv.style.color = "red";
+                keySection.style.display = "none";
+            }
+        } catch (error) {
+            console.error(error);
+            statusDiv.innerText = "Erro ao consultar o KeyAuth API.";
+            statusDiv.style.color = "red";
+        }
+    }
+</script>
+        </div>
+        
     </section>
 <center>
 <div style="margin-top: 30px; padding: 30px; background: #1c1c1c; border-radius: 10px;">
