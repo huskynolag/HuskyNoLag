@@ -408,18 +408,18 @@ Agora com suporte completo aos principais estilos de jogo:
 <section class="features" style="background-color: #0a0a0a;">
     <div class="container">
         <h2 class="section-title">Pré-visualização das Funções</h2>
-        <div class="slider-container" style="position: relative; overflow: hidden; border-radius: 10px;">
-            <div class="slider-track" id="slider-track" style="display: flex; transition: transform 0.5s ease; width: 400%;">
-                <div class="slide" style="width: 100%; flex: 0 0 100%;">
+        <div class="slider-container" style="position: relative; overflow: hidden; border-radius: 10px; width: 100%; max-width: 800px; margin: 0 auto;">
+            <div class="slider-track" id="slider-track" style="display: flex; transition: transform 0.5s ease;">
+                <div class="slide" style="flex: 0 0 100%;">
                     <img src="https://i.imgur.com/YIhQYnS.png" style="width: 100%; max-height: 500px; object-fit: contain;">
                 </div>
-                <div class="slide" style="width: 100%; flex: 0 0 100%;">
+                <div class="slide" style="flex: 0 0 100%;">
                     <img src="https://i.imgur.com/kJQLL7i.png" style="width: 100%; max-height: 500px; object-fit: contain;">
                 </div>
-                <div class="slide" style="width: 100%; flex: 0 0 100%;">
+                <div class="slide" style="flex: 0 0 100%;">
                     <img src="https://i.imgur.com/6NcsJfX.png" style="width: 100%; max-height: 500px; object-fit: contain;">
                 </div>
-                <div class="slide" style="width: 100%; flex: 0 0 100%;">
+                <div class="slide" style="flex: 0 0 100%;">
                     <img src="https://i.imgur.com/DRweMu8.png" style="width: 100%; max-height: 500px; object-fit: contain;">
                 </div>
             </div>
@@ -430,6 +430,7 @@ Agora com suporte completo aos principais estilos de jogo:
         </div>
     </div>
 </section>
+
 
 
 
@@ -510,7 +511,8 @@ Agora com suporte completo aos principais estilos de jogo:
     <script>
     let currentSlide = 0;
     const sliderTrack = document.getElementById("slider-track");
-    const totalSlides = sliderTrack.children.length;
+    const slides = sliderTrack.querySelectorAll(".slide");
+    const totalSlides = slides.length;
 
     function updateSlide() {
         sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
