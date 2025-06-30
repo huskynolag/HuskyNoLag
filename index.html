@@ -448,7 +448,12 @@ Agora com suporte completo aos principais estilos de jogo:
     style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">
     ❯
 </button>
+
+           <div style="text-align:center; color:white; margin-top:10px;">
+    <span id="slide-indicator">Slide 1 de 8</span>
+</div> 
         </div>
+        
     </div>
 </section>
 
@@ -539,12 +544,14 @@ Agora com suporte completo aos principais estilos de jogo:
     let isPaused = false;
 
     function updateSlide() {
-        sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.getElementById("slide-indicator").textContent = `Slide ${currentSlide + 1} de ${totalSlides}`;
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlide();
+    console.log("Próximo slide"); // Adicione esta linha
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlide();
     }
 
     function prevSlide() {
