@@ -437,8 +437,17 @@ Agora com suporte completo aos principais estilos de jogo:
             </div>
 
             <!-- Botões -->
-            <button onclick="prevSlide()" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">❮</button>
-            <button onclick="nextSlide()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">❯</button>
+            <!-- Botão Anterior -->
+<button id="prevButton" onclick="prevSlide()" 
+    style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">
+    ❮
+</button>
+
+<!-- Botão Próximo -->
+<button id="nextButton" onclick="nextSlide()" 
+    style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">
+    ❯
+</button>
         </div>
     </div>
 </section>
@@ -534,10 +543,8 @@ Agora com suporte completo aos principais estilos de jogo:
     }
 
     function nextSlide() {
-        if (!isPaused) {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlide();
-        }
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlide();
     }
 
     function prevSlide() {
@@ -546,7 +553,9 @@ Agora com suporte completo aos principais estilos de jogo:
     }
 
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
+        autoSlideInterval = setInterval(() => {
+            if (!isPaused) nextSlide();
+        }, 5000);
     }
 
     function stopAutoSlide() {
@@ -555,20 +564,21 @@ Agora com suporte completo aos principais estilos de jogo:
 
     function pauseSlide() {
         isPaused = true;
-        stopAutoSlide();
     }
 
     function resumeSlide() {
         isPaused = false;
-        startAutoSlide();
     }
 
-    // Inicializa o slide automático
+    // Iniciar o slide automático
     startAutoSlide();
 
-    // Adiciona eventos aos botões
-    const buttons = document.querySelectorAll("button[onclick]");
-    buttons.forEach(button => {
+    // Pegar os botões
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+
+    // Adicionar eventos de pausa
+    [prevButton, nextButton].forEach(button => {
         button.addEventListener("mouseenter", pauseSlide);
         button.addEventListener("mouseleave", resumeSlide);
     });
