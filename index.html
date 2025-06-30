@@ -526,13 +526,18 @@ Agora com suporte completo aos principais estilos de jogo:
     const slides = sliderTrack.querySelectorAll(".slide");
     const totalSlides = slides.length;
 
+    let autoSlideInterval;
+    let isPaused = false;
+
     function updateSlide() {
         sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlide();
+        if (!isPaused) {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlide();
+        }
     }
 
     function prevSlide() {
@@ -540,9 +545,35 @@ Agora com suporte completo aos principais estilos de jogo:
         updateSlide();
     }
 
-    //Slide automático (opcional):
-    setInterval(nextSlide, 5000);
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    function pauseSlide() {
+        isPaused = true;
+        stopAutoSlide();
+    }
+
+    function resumeSlide() {
+        isPaused = false;
+        startAutoSlide();
+    }
+
+    // Inicializa o slide automático
+    startAutoSlide();
+
+    // Adiciona eventos aos botões
+    const buttons = document.querySelectorAll("button[onclick]");
+    buttons.forEach(button => {
+        button.addEventListener("mouseenter", pauseSlide);
+        button.addEventListener("mouseleave", resumeSlide);
+    });
 </script>
+
 </body>
 
 </html>
