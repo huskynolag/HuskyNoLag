@@ -507,11 +507,20 @@ Agora com suporte completo aos principais estilos de jogo:
     
     <div class="key-code" style="font-size: 12px; margin: 5px 0;">
     <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 10px;">
-    <span>HNLPB-TESTE-0sPdsf-8jG9Bi-T3fNdu-gHfmgg</span> 
-    <button class="copy-btn" onclick="copyKey(this)" disabled style="background-color: gray; cursor: not-allowed;">Expirada</button>
-    <span style="color: red; font-weight: bold; margin-left: 10px;">🔒 Chave encerrada</span>
-</li>
+        <ul id="lista-keys">
+    <li style="margin-bottom: 10px;">
+        <span>HNLPB-TESTE-0sPdsf-8jG9Bi-T3fNdu-gHfmgg</span> 
+        <button class="copy-btn" onclick="copyKey(this)">Copiar</button>
+    </li>
+    <li style="margin-bottom: 10px;">
+        <span>HNLPB-TESTE-8zcteC-iEY7zm-7Y1tEQ-sTLOr7</span> 
+        <button class="copy-btn" onclick="copyKey(this)">Copiar</button>
+    </li>
+    <li style="margin-bottom: 10px;">
+        <span>HNLPB-TESTE-9jvqR2-RJs7B5-A1TxVJ-Nq7xFO</span> 
+        <button class="copy-btn" onclick="copyKey(this)">Copiar</button>
+    </li>
+
     </ul>
 </div>
 
@@ -624,14 +633,40 @@ Agora com suporte completo aos principais estilos de jogo:
     });
 </script>
 
+<script>
+    // Lista de chaves expiradas
+    const chavesExpiradas = [
+        "HNLPB-TESTE-0sPdsf-8jG9Bi-T3fNdu-gHfmgg",
+        "HNLPB-TESTE-9jvqR2-RJs7B5-A1TxVJ-Nq7xFO"
+    ];
 
+    // Função que percorre os itens e marca como expirado
+    window.onload = function () {
+        const itens = document.querySelectorAll("#lista-keys li");
+        itens.forEach(item => {
+            const chave = item.querySelector("span").innerText.trim();
+            if (chavesExpiradas.includes(chave)) {
+                const botao = item.querySelector("button");
+                botao.disabled = true;
+                botao.innerText = "Expirada";
+                botao.style.backgroundColor = "gray";
+                botao.style.cursor = "not-allowed";
 
-    <script>
+                const mensagem = document.createElement("span");
+                mensagem.innerText = " 🔒 Chave encerrada";
+                mensagem.style.color = "red";
+                mensagem.style.fontWeight = "bold";
+                mensagem.style.marginLeft = "10px";
+                item.appendChild(mensagem);
+            }
+        });
+    };
+
+    // Função copiar (exemplo)
     function copyKey(button) {
         const key = button.parentElement.querySelector("span").innerText;
         navigator.clipboard.writeText(key).then(() => {
-            button.textContent = "Copiado!";
-            setTimeout(() => button.textContent = "Copiar", 1500);
+            alert("Chave copiada: " + key);
         });
     }
 </script>
