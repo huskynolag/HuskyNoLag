@@ -581,7 +581,7 @@ Agora com suporte completo aos principais estilos de jogo:
 </center>
 
     <div id="contadorOnline">
-    <span>🟢 Online: <span id="contador-numero">...</span></span>
+    <span>🟢 Online: <span id="contador-numero">0</span></span>
 </div>
 
 <style>
@@ -601,21 +601,27 @@ Agora com suporte completo aos principais estilos de jogo:
 </style>
 
 <script>
-    function atualizarContador() {
-        fetch("contador_online.php")
-            .then(response => response.text())
-            .then(dados => {
-                document.getElementById("contador-numero").innerText = dados;
-            })
-            .catch(() => {
-                document.getElementById("contador-numero").innerText = "Erro";
-            });
+    // Número inicial entre 8 e 20 usuários simulados
+    let contador = Math.floor(Math.random() * 13) + 8;
+    const contadorElemento = document.getElementById("contador-numero");
+
+    function atualizarContadorFake() {
+        // Simula entrada/saída de usuários (+1, -1, ou 0)
+        let variacao = Math.floor(Math.random() * 3) - 1;
+
+        contador += variacao;
+
+        // Limita entre 5 e 50 usuários
+        if (contador < 5) contador = 5;
+        if (contador > 50) contador = 50;
+
+        contadorElemento.textContent = contador;
     }
 
-    atualizarContador();
-    setInterval(atualizarContador, 10000); // Atualiza a cada 10 segundos
+    // Atualiza a cada 8 segundos
+    atualizarContadorFake();
+    setInterval(atualizarContadorFake, 8000);
 </script>
-
     <footer>
         <div class="container">
             <p>© 2025 HUSKY NO LAG 7.4 - A melhor otimização para Point Blank</p>
