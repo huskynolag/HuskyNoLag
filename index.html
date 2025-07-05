@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUSKY NO LAG 7.4 - Otimização para Point Blank</title>
     <style>
+
+        .copy-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #ff7730;
+}
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         :root {
             --primary-color: #FF5500;
@@ -610,6 +627,18 @@ Agora com suporte completo aos principais estilos de jogo:
         button.addEventListener("mouseenter", pauseSlide);
         button.addEventListener("mouseleave", resumeSlide);
     });
+</script>
+
+
+
+    <script>
+    function copyKey(button) {
+        const key = button.parentElement.querySelector("span").innerText;
+        navigator.clipboard.writeText(key).then(() => {
+            button.textContent = "Copiado!";
+            setTimeout(() => button.textContent = "Copiar", 1500);
+        });
+    }
 </script>
 
 </body>
