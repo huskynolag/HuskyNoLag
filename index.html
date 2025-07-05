@@ -601,26 +601,26 @@ Agora com suporte completo aos principais estilos de jogo:
 </style>
 
 <script>
-    // Número inicial entre 8 e 20 usuários simulados
+    
     let contador = Math.floor(Math.random() * 13) + 8;
     const contadorElemento = document.getElementById("contador-numero");
 
-    function atualizarContadorFake() {
-        // Simula entrada/saída de usuários (+1, -1, ou 0)
+    function atualizarContador() {
+        
         let variacao = Math.floor(Math.random() * 3) - 1;
 
         contador += variacao;
 
-        // Limita entre 5 e 50 usuários
+        
         if (contador < 5) contador = 5;
         if (contador > 50) contador = 50;
 
         contadorElemento.textContent = contador;
     }
 
-    // Atualiza a cada 8 segundos
-    atualizarContadorFake();
-    setInterval(atualizarContadorFake, 8000);
+    
+    atualizarContador();
+    setInterval(atualizarContador, 8000);
 </script>
     <footer>
         <div class="container">
