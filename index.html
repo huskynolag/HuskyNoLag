@@ -580,9 +580,41 @@ Agora com suporte completo aos principais estilos de jogo:
 </div>
 </center>
 
-    <div style="text-align:center; margin-top: 20px; font-size: 14px;">
-    <iframe src="contador_online.php" frameborder="0" style="background: none; color: white; height: 25px; width: 180px;"></iframe>
+    <div id="contadorOnline">
+    <span>🟢 Online: <span id="contador-numero">...</span></span>
 </div>
+
+<style>
+#contadorOnline {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 102, 204, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    box-shadow: 0 0 10px #000;
+    z-index: 9999;
+}
+</style>
+
+<script>
+    function atualizarContador() {
+        fetch("contador_online.php")
+            .then(response => response.text())
+            .then(dados => {
+                document.getElementById("contador-numero").innerText = dados;
+            })
+            .catch(() => {
+                document.getElementById("contador-numero").innerText = "Erro";
+            });
+    }
+
+    atualizarContador();
+    setInterval(atualizarContador, 10000); // Atualiza a cada 10 segundos
+</script>
 
     <footer>
         <div class="container">
