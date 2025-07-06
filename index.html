@@ -750,7 +750,7 @@ Agora com suporte completo aos principais estilos de jogo:
 </center>
 
     <div id="contadorOnline">
-    <span>🟢 Online: <span id="contador-numero">108</span></span>
+    <span>🟢 Online: <span id="contador-numero">...</span></span>
 </div>
 
 <style>
@@ -769,25 +769,19 @@ Agora com suporte completo aos principais estilos de jogo:
 }
 </style>
 
-
 <script>
-    let contador = Math.floor(Math.random() * 13) + 8;
-    const contadorElemento = document.getElementById("contador-numero");
+    
+    const base = 34;
+    const variacaoMax = 6;
 
-    function atualizarContador() {
-        let variacao = Math.floor(Math.random() * 5) - 1;
-        contador += variacao;
+    const agora = new Date();
+    const minuto = agora.getMinutes();
+    const seed = minuto % variacaoMax; // varia de 0 a 5
 
-        if (contador < 5) contador = 5;
-        if (contador > 150) contador = 150;
+    const valorFinal = base + seed;
 
-        contadorElemento.textContent = contador;
-    }
-
-    atualizarContador();
-    setInterval(atualizarContador, 8000);
+    document.getElementById("contador-numero").textContent = valorFinal;
 </script>
-
     <footer>
         <div class="container">
             <p>© 2025 HUSKY NO LAG 7.4 - A melhor otimização para Point Blank</p>
