@@ -661,12 +661,12 @@ Agora com suporte completo aos principais estilos de jogo:
     
     // Ajusta a posição inicial para o slide "real" primeiro
     currentIndex = 1;
-    slides.style.transform = translateX(-${currentIndex * 100}%);
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
 
     function updateSlide() {
       isTransitioning = true;
       slides.style.transition = "transform 0.5s ease-in-out";
-      slides.style.transform = translateX(-${currentIndex * 100}%);
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
       
       // Remove a transição após terminar a animação
       setTimeout(() => {
@@ -676,14 +676,14 @@ Agora com suporte completo aos principais estilos de jogo:
         if (currentIndex === slideCount + 1) {
           slides.style.transition = "none";
           currentIndex = 1;
-          slides.style.transform = translateX(-${currentIndex * 100}%);
+          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
         
         // Se estiver no clone do último slide, volta para o real sem animação
         if (currentIndex === 0) {
           slides.style.transition = "none";
           currentIndex = slideCount;
-          slides.style.transform = translateX(-${currentIndex * 100}%);
+          sslides.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
       }, 500);
     }
@@ -808,8 +808,8 @@ Agora com suporte completo aos principais estilos de jogo:
     let isPaused = false;
 
     function updateSlide() {
-    sliderTrack.style.transform = translateX(-${currentSlide * 100}%);
-    document.getElementById("slide-indicator").textContent = Slide ${currentSlide + 1} de ${totalSlides};
+    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.getElementById("slide-indicator").textContent = `Slide ${currentSlide + 1} de ${totalSlides}`;
     }
 
     function nextSlide() {
