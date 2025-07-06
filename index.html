@@ -72,8 +72,8 @@
         }
 
         .hero {
-            background: url('https://i.imgur.com/nkADXPZ.jpeg') center/cover;
-            height: 400px;
+            background: url('https://i.imgur.com/JVUU8GL.png') center/cover;
+            height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -119,7 +119,7 @@
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            margin-top: 0px;
             box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
         }
 
@@ -254,7 +254,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
-            max-width: 500px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -299,6 +299,12 @@
                 grid-template-columns: 1fr;
             }
         }
+
+.texto-direita {
+  text-align: right;
+  margin-left: auto;
+  max-width: 100%;
+}
     </style>
 </head>
 
@@ -312,10 +318,17 @@
 
     <section class="hero">
         <div class="hero-content container">
-            <h1>🎯 HUSKY NO LAG 7.4 — OTIMIZAÇÃO TOTAL PARA POINT BLANK! 🚀</h1>
-            <p>Feito sob medida para quem joga Point Blank e quer FPS mais altos, menos LAG e resposta instantânea</p>
-            <a href="#download" class="cta-button">BAIXAR AGORA</a>
-        </div>
+  <div class="texto-direita">
+    <h2 style="color:#ffffff; font-weight: bold;">UPDATE 7.4</h2>
+<p style="color:#ffffff; max-width: 300px;">
+  <span style="color:#00ffff;">Visual novo bugs corrigidos e automação total mais leve </span>
+  <span style="color:#00ffff;">rápido e inteligente!</span>
+</p>
+
+    
+  </div>
+  <a href="#download" class="cta-button">BAIXAR AGORA</a>
+</div>
     </section>
 
     <section class="features" id="features">
@@ -648,12 +661,12 @@ Agora com suporte completo aos principais estilos de jogo:
     
     // Ajusta a posição inicial para o slide "real" primeiro
     currentIndex = 1;
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    slides.style.transform = translateX(-${currentIndex * 100}%);
 
     function updateSlide() {
       isTransitioning = true;
       slides.style.transition = "transform 0.5s ease-in-out";
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      slides.style.transform = translateX(-${currentIndex * 100}%);
       
       // Remove a transição após terminar a animação
       setTimeout(() => {
@@ -663,14 +676,14 @@ Agora com suporte completo aos principais estilos de jogo:
         if (currentIndex === slideCount + 1) {
           slides.style.transition = "none";
           currentIndex = 1;
-          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+          slides.style.transform = translateX(-${currentIndex * 100}%);
         }
         
         // Se estiver no clone do último slide, volta para o real sem animação
         if (currentIndex === 0) {
           slides.style.transition = "none";
           currentIndex = slideCount;
-          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+          slides.style.transform = translateX(-${currentIndex * 100}%);
         }
       }, 500);
     }
@@ -795,8 +808,8 @@ Agora com suporte completo aos principais estilos de jogo:
     let isPaused = false;
 
     function updateSlide() {
-    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-    document.getElementById("slide-indicator").textContent = `Slide ${currentSlide + 1} de ${totalSlides}`;
+    sliderTrack.style.transform = translateX(-${currentSlide * 100}%);
+    document.getElementById("slide-indicator").textContent = Slide ${currentSlide + 1} de ${totalSlides};
     }
 
     function nextSlide() {
