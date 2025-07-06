@@ -770,18 +770,24 @@ Agora com suporte completo aos principais estilos de jogo:
 </style>
 
 <script>
-    
-    const base = 34;
-    const variacaoMax = 6;
+function atualizarContador() {
+    const base = 42;
+    const variacaoMax = 7;
 
     const agora = new Date();
-    const minuto = agora.getMinutes();
-    const seed = minuto % variacaoMax; // varia de 0 a 5
+    const segundos = Math.floor(agora.getSeconds() / 10); 
+    const seed = (agora.getMinutes() * 6 + segundos) % variacaoMax;
 
     const valorFinal = base + seed;
 
     document.getElementById("contador-numero").textContent = valorFinal;
+}
+
+
+atualizarContador();
+setInterval(atualizarContador, 10000);
 </script>
+
     <footer>
         <div class="container">
             <p>© 2025 HUSKY NO LAG 7.4 - A melhor otimização para Point Blank</p>
