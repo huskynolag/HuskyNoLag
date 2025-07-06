@@ -771,22 +771,24 @@ Agora com suporte completo aos principais estilos de jogo:
 
 <script>
 function atualizarContador() {
-    const base = 42;
-    const variacaoMax = 7;
+    const base = 37;      // Valor central
+    const variacao = 3;     // Pode variar de -3 até +3
 
     const agora = new Date();
-    const segundos = Math.floor(agora.getSeconds() / 10); 
-    const seed = (agora.getMinutes() * 6 + segundos) % variacaoMax;
+    const segundos = Math.floor(agora.getSeconds() / 10); // muda a cada 10s
+    const minutos = agora.getMinutes();
 
-    const valorFinal = base + seed;
+    // Simulação determinística (mesmo número para todos)
+    const seed = (minutos * 6 + segundos) % (variacao * 2 + 1); // de 0 até 6
+    const valorFinal = base - variacao + seed;
 
     document.getElementById("contador-numero").textContent = valorFinal;
 }
 
-
 atualizarContador();
 setInterval(atualizarContador, 10000);
 </script>
+
 
     <footer>
         <div class="container">
