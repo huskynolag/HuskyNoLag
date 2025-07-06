@@ -555,6 +555,143 @@ Agora com suporte completo aos principais estilos de jogo:
      <a href="https://www.youtube.com/watch?v=hVC3ugCraTE&lc=Ugw95op8Yp-5K9yN9S14AaABAg" target="_blank" rel="noopener noreferrer" style="display: inline-block; text-decoration: none; color: blue; font-size: 13px;">
             Video Tutorial!
         </a>
+
+<!-- SEÇÃO DE COMENTÁRIOS SOBRE POINT BLANK COM SLIDER E SETAS -->
+<section id="pb-feedbacks" style="padding: 40px 20px; background-color: #0f0f0f;">
+  <h2 style="color: #00ffff; text-align: center; font-family: 'Segoe UI', sans-serif; margin-bottom: 30px;">
+    Comentários sobre Husky No Lag!
+  </h2>
+
+  <div class="slider-container" style="position: relative; max-width: 700px; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #00ffff;">
+
+    <!-- Slides -->
+    <div class="slides" style="display: flex; transition: transform 0.5s ease-in-out;">
+      <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
+        <p style="color: #ffffff; font-size: 1.1rem;">🎯 <strong style="color:#00ffff;">@SniperPro:</strong> "Depois que usei os tweaks, meu PB ficou lisinho! FPS cravado e sem travadas no meio das partidas."</p>
+      </div>
+      <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
+        <p style="color: #ffffff; font-size: 1.1rem;">🔥 <strong style="color:#00ffff;">@Z8Veterano:</strong> "Jogo PB desde 2012 e nunca vi um boost tão simples e eficaz como esse. Recomendo demais."</p>
+      </div>
+      <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
+        <p style="color: #ffffff; font-size: 1.1rem;">💻 <strong style="color:#00ffff;">@LagZero:</strong> "Melhorou meu input lag no PB e agora consigo dar HS com mais consistência. Valeu Husky!"</p>
+      </div>
+      <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
+        <p style="color: #ffffff; font-size: 1.1rem;">🚀 <strong style="color:#00ffff;">@PlayerPB:</strong> "Os tweaks do site realmente fazem diferença. Não acredito que joguei tanto tempo sem isso."</p>
+      </div>
+    </div>
+
+    <!-- Setas de navegação -->
+    <button id="prevBtn" style="
+      position: absolute;
+      top: 50%;
+      left: -40px;
+      transform: translateY(-50%);
+      background-color: rgba(0,255,255,0.2);
+      border: none;
+      color: #00ffff;
+      font-size: 28px;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 12px;
+    ">&#10094;</button>
+
+    <button id="nextBtn" style="
+      position: absolute;
+      top: 50%;
+      right: -40px;
+      transform: translateY(-50%);
+      background-color: rgba(0,255,255,0.2);
+      border: none;
+      color: #00ffff;
+      font-size: 28px;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 12px;
+    ">&#10095;</button>
+
+  </div>
+</section>
+
+<!-- JavaScript corrigido com loop infinito suave -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelector(".slides");
+    const slideCount = document.querySelectorAll(".slide").length;
+    let currentIndex = 0;
+    let slideInterval;
+    let isTransitioning = false;
+
+    // Clona o primeiro e último slides para criar um efeito de loop contínuo
+    const firstSlide = slides.firstElementChild.cloneNode(true);
+    const lastSlide = slides.lastElementChild.cloneNode(true);
+    slides.appendChild(firstSlide);
+    slides.insertBefore(lastSlide, slides.firstElementChild);
+    
+    // Ajusta a posição inicial para o slide "real" primeiro
+    currentIndex = 1;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    function updateSlide() {
+      isTransitioning = true;
+      slides.style.transition = "transform 0.5s ease-in-out";
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      
+      // Remove a transição após terminar a animação
+      setTimeout(() => {
+        isTransitioning = false;
+        
+        // Se estiver no clone do primeiro slide, volta para o real sem animação
+        if (currentIndex === slideCount + 1) {
+          slides.style.transition = "none";
+          currentIndex = 1;
+          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        
+        // Se estiver no clone do último slide, volta para o real sem animação
+        if (currentIndex === 0) {
+          slides.style.transition = "none";
+          currentIndex = slideCount;
+          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+      }, 500);
+    }
+
+    function nextSlide() {
+      if (isTransitioning) return;
+      currentIndex++;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      if (isTransitioning) return;
+      currentIndex--;
+      updateSlide();
+    }
+
+    // Inicia o slider automático
+    function startSlider() {
+      slideInterval = setInterval(() => {
+        nextSlide();
+      }, 4000);
+    }
+
+    // Event listeners para os botões
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      clearInterval(slideInterval);
+      nextSlide();
+      startSlider();
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      clearInterval(slideInterval);
+      prevSlide();
+      startSlider();
+    });
+
+    // Inicia o slider
+    startSlider();
+  });
+</script>
 <div style="margin-top: 30px; padding: 30px; background: #1c1c1c; border-radius: 10px;">
   <h3 style="color: #FFD700; font-size: 1.5rem; margin-bottom: 15px;">⚙️ Instalação Obrigatória</h3>
   <p>Antes de rodar o programa, instale os pacotes abaixo:</p>
@@ -727,6 +864,10 @@ Agora com suporte completo aos principais estilos de jogo:
         });
     }
 </script>
+
+
+
+
 
 </body>
 
