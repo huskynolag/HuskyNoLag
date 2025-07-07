@@ -505,7 +505,28 @@ Agora com suporte completo aos principais estilos de jogo:
 
 <section style="background-color: #111; padding: 20px 0; text-align: center; border-top: 2px solid #FF5500; border-bottom: 2px solid #FF5500;">
   <div class="container">
-    <h2 style="color: #FFD700; font-size: 1.8rem;">🔧 UPDATE 7.4 Disponível! 🚀</h2>
+    <h2 class="fade-title">🔧 UPDATE 7.4 Disponível! 🚀</h2>
+
+<style>
+@font-face {
+  font-family: 'Digital7Mono';
+  src: url('fonts/digital-7 (mono).ttf') format('truetype');
+}
+
+.fade-title {
+  font-family: 'Digital7Mono', monospace;
+  font-weight: bold;
+  animation: colorFade 3s infinite;
+}
+
+@keyframes colorFade {
+  0%   { color: red; }
+  33%  { color: orangered; }
+  66%  { color: white; }
+  100% { color: red; }
+}
+</style>
+
     <p style="color: #ccc; font-size: 1.1rem; max-width: 900px; margin: 10px auto;">
       A nova versão traz um visual totalmente renovado, bugs corrigidos e automação completa! Mais leve, mais rápido, mais inteligente.
     </p>
