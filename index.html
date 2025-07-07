@@ -319,7 +319,21 @@
     <section class="hero">
         <div class="hero-content container">
   <div class="texto-direita">
-<h2 style="color:#ff0000; font-weight: bold;">UPDATE 7.4</h2>
+<h2 class="fade-title">UPDATE 7.4</h2>
+
+<style>
+.fade-title {
+  font-weight: bold;
+  animation: colorFade 3s infinite;
+}
+
+@keyframes colorFade {
+  0%   { color: red; }
+  33%  { color: orangered; }
+  66%  { color: white; }
+  100% { color: red; }
+}
+</style>
 
 <p style="color:#ffffff; max-width: 300px;">
   <span style="color:#00ffff;">Visual novo bugs corrigidos e automação total mais leve </span>
