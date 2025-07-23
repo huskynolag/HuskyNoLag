@@ -1,0 +1,103 @@
+/* Seções */
+section {
+  padding: var(--section-padding);
+}
+
+/* Cabeçalho de seção */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Título de seção */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800px;
+  margin-bottom: 1rem;
+}
+
+/* Texto com gradiente */
+.gradient-text {
+color: var(--primary-color);
+
+}
+
+/* Descrição de seção */
+.section-description {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+/* Responsividade para Sections */
+@media (max-width: 1024px) {
+  section {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 2.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  section {
+    padding: 2rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 7vw, 2rem);
+  }
+
+  .section-description {
+    font-size: 0.9rem;
+  }
+}
+

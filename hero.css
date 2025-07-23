@@ -1,0 +1,511 @@
+/* Hero Section - BANNER FIXO */
+.hero {
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../husky.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  /* BANNER ESTÁTICO */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+/* Conteúdo da seção Hero */
+.hero-content {
+  text-align: center;
+  max-width: 1200px;
+  position: relative;
+  z-index: 2;
+
+}
+
+/* Badge de destaque */
+.badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--light-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* CONTÊINER DO TÍTULO COM ALTURA FIXA PARA EVITAR LAYOUT SHIFT */
+.hero-title-container {
+  min-height: 116px;
+  /* Permite que o contêiner se ajuste ao conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título principal da seção Hero */
+.hero-title {
+  font-size: clamp(2.2rem, 1vw, 1.5rem);
+  color: var(--light-color);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  line-height: 1.2;
+  font-weight: lighter;
+}
+
+/* TEXTO ANIMADO COM GRADIENTE */
+.title-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--light-color), var(--primary-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  display: inline-block;
+
+}
+
+/* CURSOR DE DIGITAÇÃO */
+.typing-cursor {
+  color: var(--primary-color);
+  font-weight: normal;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+/* Animação de shift de gradiente */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animação de piscar */
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Descrição da seção Hero */
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  color: var(--muted-text);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Destaque primário */
+.highlight-primary {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Destaque de acento */
+.highlight-accent {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* Wrapper do vídeo */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Container do vídeo */
+.video-container {
+  position: relative;
+  width: 100p;
+  height: 100%;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+
+
+
+
+/* Botões da seção Hero */
+.hero-buttons {
+  margin-top: 100px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 75vw;
+  height: 75vh;
+  max-width: 1280px;
+  max-height: 720px;
+}
+
+.lightbox-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  box-shadow:
+    0 0 40px rgba(255, 8, 0, 0.7),
+    0 0 10px rgb(161, 31, 14),
+    0 0 120px rgba(0, 255, 255, 0.2);
+}
+
+/* Botão de fechar lightbox */
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -70px;
+  width: 50px;
+  height: 50px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 60px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 85, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Estilos para o botão de download e suas animações */
+.video-box {
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.video-line {
+  position: relative;
+  display: inline-block;
+  width: 1100px;
+  height: 500px;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+  color: #999;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Linhas animadas do botão de download */
+.video-line span {
+  position: absolute;
+  background: linear-gradient(to right, #171618, #f38333);
+  z-index: 10;
+  pointer-events: none;
+  /* não atrapalha clique */
+}
+
+.video-line span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #171618, #f38333);
+  animation: animate1 2s linear infinite;
+}
+
+.video-line span:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #171618, #3bff3b);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+
+.video-line span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, #171618, #3bff3b);
+  animation: animate3 2s linear infinite;
+}
+
+.video-line span:nth-child(4) {
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, #171618, #3bff3b);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+
+/* Animações das linhas do botão de download */
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+
+
+
+
+/* Responsividade para Hero Section */
+@media (max-width: 1024px) {
+  .hero {
+    background-attachment: scroll;
+    padding-top: 90px;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+
+  .hero-title-container {
+    min-height: 140px;
+  }
+
+  .video-line {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-container {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 90px;
+    min-height: 90vh;
+    padding-bottom: 2rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-title-container {
+    min-height: 120px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .video-wrapper {
+    margin: 2rem auto;
+  }
+
+  .video-line {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+  }
+
+  .lightbox-content {
+    width: 95vw;
+    height: 60vh;
+    max-width: none;
+  }
+
+  .close-btn {
+    top: -40px;
+    right: 0;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 90px;
+    min-height: 90vh;
+  }
+
+  .hero-content {
+    padding: 0 0.75rem;
+  }
+
+  .hero-title-container {
+    min-height: 100px;
+  }
+
+  .hero-buttons {
+    margin-top: 1.5rem;
+  }
+
+  .btn-teste {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .video-line {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .lightbox-content {
+    width: 98vw;
+    height: 55vh;
+  }
+
+  .close-btn {
+    top: -20px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-content {
+    padding: 0 0.5rem;
+  }
+
+  .hero-title-container {
+    min-height: 80px;
+  }
+
+  .btn-teste {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .lightbox-content {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .close-btn {
+    top: -15px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+  }
+}
+
+/* Ajustes para orientação landscape em dispositivos móveis */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+
+  .hero-title-container {
+    min-height: 60px;
+  }
+
+  .video-wrapper {
+    margin: 1rem auto;
+  }
+}

@@ -1,0 +1,172 @@
+/* Experience Section */
+.experience-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Features da seção Experience */
+.experience-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Item da experiência */
+.experience-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Ícone da experiência */
+.experience-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 85, 0, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+/* Texto da experiência */
+.experience-text h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.experience-text p {
+  color: var(--muted-text);
+}
+
+/* Imagem da experiência */
+.experience-image {
+  position: relative;
+}
+
+.gameplay-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 85, 0, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+/* Animação de brilho pulsante */
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 85, 0, 0.3);
+  }
+
+  to {
+    box-shadow: 0 0 30px rgba(255, 85, 0, 0.6);
+  }
+}
+
+
+
+/* Responsividade para Experience Section */
+@media (max-width: 1024px) {
+  .experience-content {
+    gap: 3rem;
+  }
+
+  .experience-features {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .experience-features {
+    order: 2;
+  }
+
+  .experience-image {
+    order: 1;
+  }
+
+  .experience-item {
+    gap: 0.8rem;
+  }
+
+  .experience-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .experience-text h3 {
+    font-size: 1rem;
+  }
+
+  .experience-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-content {
+    gap: 1.5rem;
+  }
+
+  .experience-features {
+    gap: 1.2rem;
+  }
+
+  .experience-item {
+    gap: 0.7rem;
+  }
+
+  .experience-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+
+  .experience-text h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .experience-text p {
+    font-size: 0.85rem;
+  }
+
+  .gameplay-image {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .experience-features {
+    gap: 1rem;
+  }
+
+  .experience-item {
+    gap: 0.6rem;
+  }
+
+  .experience-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+  .experience-text h3 {
+    font-size: 0.9rem;
+  }
+
+  .experience-text p {
+    font-size: 0.8rem;
+  }
+}
+

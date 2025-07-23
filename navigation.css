@@ -1,0 +1,221 @@
+/* Navegação */
+.navbar {
+  padding: 0 var(--container-padding);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: #22222246;
+  box-shadow: 0 1px 3px #f38333;
+}
+
+/* Efeito de scroll na barra de navegação */
+.navbar.scrolled {
+  background: rgba(34, 34, 34, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Container dos itens de navegação */
+.nav-container {
+  height: 70px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+}
+
+/* Logo da navegação */
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  padding-top: 10px;
+  height: 50px;
+  width: auto;
+  transition: var(--transition);
+}
+
+/* Menu de navegação */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Links de navegação */
+.nav-link {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: var(--transition);
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(255, 85, 0, 0.5);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Botões de navegação */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Ícone de hambúrguer para mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 1100;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--foreground);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+/* Animação do ícone de hambúrguer */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsividade da navegação */
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-buttons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(34, 34, 34, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border-color);
+    gap: 1rem;
+    z-index: 999;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
+  .nav-container {
+    padding: 0;
+  }
+
+  .logo-img {
+    height: 45px;
+  }
+
+  .nav-menu.active {
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .nav-menu.active {
+    padding: 1rem 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    padding: 0 0.5rem;
+  }
+
+  .logo-img {
+    height: 35px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+}
+

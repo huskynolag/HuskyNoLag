@@ -1,0 +1,65 @@
+/* Community Section */
+.community {
+  text-align: center;
+}
+
+/* Conteúdo da comunidade */
+.community-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ícone da comunidade */
+.community-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 102, 204, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+
+
+/* Responsividade para Community Section */
+@media (max-width: 768px) {
+  .community-content {
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
+  .community-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .community-content {
+    max-width: 100%;
+    padding: 0 0.75rem;
+  }
+
+  .community-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .community-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+}
+

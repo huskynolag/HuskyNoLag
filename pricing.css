@@ -1,0 +1,247 @@
+/* Pricing Section */
+.pricing {
+  background: var(--card-bg);
+}
+
+/* Grid de planos de preços */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card de preço */
+.pricing-card {
+  background: linear-gradient(135deg, #2a2a2a, #333);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 85, 0, 0.4);
+  border-color: var(--primary-color);
+}
+
+/* Card de preço popular */
+.pricing-card.popular {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+/* Badge de popularidade */
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: var(--dark-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* Desconto do plano */
+.pricing-discount {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.8rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cabeçalho do plano de preço */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Nome do plano */
+.pricing-name {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Duração do plano */
+.pricing-duration {
+  color: var(--muted-text);
+  margin-bottom: 1rem;
+}
+
+/* Preço do plano */
+.pricing-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Preço antigo */
+.old-price {
+  color: var(--muted-text);
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+/* Preço atual */
+.current-price {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Lista de features do plano */
+.pricing-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.pricing-features i {
+  color: var(--accent-color);
+  flex-shrink: 0;
+}
+
+
+
+/* Responsividade para Pricing Section */
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .pricing-card {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 500px;
+  }
+
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .pricing-card:hover {
+    transform: scale(1.02);
+  }
+
+  .pricing-card.popular {
+    transform: none;
+  }
+
+  .pricing-card.popular:hover {
+    transform: scale(1.02);
+  }
+
+  .current-price {
+    font-size: 2.2rem;
+  }
+
+  .pricing-name {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-grid {
+    max-width: 100%;
+  }
+
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .current-price {
+    font-size: 2rem;
+  }
+
+  .pricing-name {
+    font-size: 1.2rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.85rem;
+  }
+
+  .pricing-discount {
+    width: 45px;
+    height: 45px;
+    font-size: 0.7rem;
+    top: -10px;
+    right: -10px;
+  }
+
+  .pricing-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .pricing-card {
+    padding: 1rem;
+  }
+
+  .current-price {
+    font-size: 1.8rem;
+  }
+
+  .pricing-name {
+    font-size: 1.1rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-discount {
+    width: 40px;
+    height: 40px;
+    font-size: 0.65rem;
+  }
+
+  .pricing-badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
