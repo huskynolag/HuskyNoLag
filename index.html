@@ -2,1013 +2,639 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <meta name="google-site-verification" content="j1Mw2CMxTuBxAw3AHw7GhptJ6rV5iy4AL7OqnX4pYuA" />
-
-     <!-- ✅ SEO Meta Tags -->
-  <title>Husky FPS - Aumente o desempenho do seu PC para jogos!</title>
-  <meta name="description" content="Husky FPS é um otimizador de desempenho que reduz o lag, melhora o FPS e ajusta seu PC para rodar jogos como Point Blank com máxima performance.">
-  <meta name="keywords" content="husky fps, otimizar pc, aumentar fps, point blank, sem lag, desempenho, husky no lag">
-  <meta name="author" content="Husky No Lag">
-  <link rel="canonical" href="https://huskyfps.pro/" />
-
-  <!-- ✅ Open Graph (para redes sociais como Facebook, WhatsApp, etc.) -->
-  <meta property="og:title" content="Husky FPS - Otimizador de Desempenho para Jogos" />
-  <meta property="og:description" content="Reduza o lag, aumente o FPS e jogue com mais performance usando o Husky FPS." />
-  <meta property="og:url" content="https://huskyfps.pro/" />
-  <meta property="og:image" content="https://huskyfps.pro/img/banner.png" />
-  <meta property="og:type" content="website" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUSKY FPS 9.4 - Otimização para Point Blank</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
+    <title>HuskyFPS - Otimização para Point Blank</title>
+    <meta name="description"
+        content="Maximize seu desempenho no Point Blank com o HuskyFPS. Otimizações avançadas para mais FPS, menos lag e jogabilidade fluida.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Fira+Sans:400,300,700,500,400italic,500italic,700italic,300italic"
+        rel="stylesheet">
 
-        .copy-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 5px 10px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: background 0.3s ease;
-}
 
-.copy-btn:hover {
-    background: #ff7730;
-}
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-        :root {
-            --primary-color: #FF5500;
-            --secondary-color: #0066CC;
-            --accent-color: #FFD700;
-            --dark-color: #222;
-            --light-color: #f8f9fa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0a0a0a;
-            color: white;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #121212, #0f0f0f);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .hero {
-            background: url('https://i.imgur.com/JVUU8GL.png') center/cover;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            margin-top: 62px;
-            box-shadow: 0 4px 15px rgba(255, 85, 0, 0.3);
-        }
-
-        .cta-button:hover {
-            background: #ff7730;
-            transform: translateY(-3px);
-            box-sha: 0 6px 20px rgba(255, 85, 0, 0.4);
-        }
-
-        .features {
-            padding: 80px 0;
-            background: #111;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: var(--accent-color);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-item {
-            background: #1a1a1a;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid #333;
-        }
-
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            border-color: var(--primary-color);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .feature-description {
-            color: #ccc;
-        }
-
-        .optimization {
-            padding: 80px 0;
-            background: linear-gradient(to bottom, #111, #0a0a0a);
-        }
-
-        .optimization-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .optimization-image {
-            flex: 1;
-            min-width: 300px;
-            margin-right: 40px;
-        }
-
-        .optimization-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .optimization-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .optimization-text h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .optimization-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .optimization-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .optimization-list li::before {
-            content: "✅";
-            margin-right: 10px;
-        }
-
-        .download {
-            padding: 80px 0;
-            text-align: center;
-            background: #0c0c0c;
-        }
-
-        .download h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .download p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .key-section {
-            background: #1a1a1a;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .key-section h3 {
-            margin-bottom: 10px;
-            color: var(--accent-color);
-        }
-
-        .key-code {
-            font-family: monospace;
-            font-size: 1.3rem;
-            padding: 10px;
-            background: #333;
-            border-radius: 5px;
-            letter-spacing: 2px;
-            color: white;
-        }
-
-        footer {
-            background: #080808;
-            padding: 20px 0;
-            text-align: center;
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                height: 350px;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .optimization-content {
-                flex-direction: column;
-            }
-            .optimization-image {
-                margin-right: 0;
-                margin-bottom: 30px;
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-.texto-direita {
-  text-align: right;
-  margin-left: auto;
-  max-width: 100%;
-}
-    </style>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <img src="https://i.ibb.co/hF32Qbgz/FEFES.png" alt="HUSKY FPS" style="height: 220px;">
-            
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content container">
-  <div class="texto-direita">
-<h2 class="fade-title">UPDATE 9.4</h2>
-
-<style>
-.fade-title {
-  font-weight: bold;
-  animation: colorFade 3s infinite;
-}
-
-@keyframes colorFade {
-  0%   { color: orange; }
-  33%  { color: orangered; }
-  66%  { color: white; }
-  100% { color: orange; }
-}
-</style>
-
-<p style="color:#ffffff; max-width: 300px;">
-  <span style="color:#00ffff;">Visual novo bugs corrigidos e automação total mais leve </span>
-  <span style="color:#00ffff;">rápido e inteligente!</span>
-</p>
-
-    
-  </div>
-  <a href="#download" class="cta-button">BAIXAR AGORA</a>
-</div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title">Características Principais</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🔥</div>
-                    <h3 class="feature-title">Energia Config</h3>
-                    <p class="feature-description">Ajuste automático para Desempenho Máximo — jogue PB com o máximo de potência!</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Ponto de Restauração</h3>
-                    <p class="feature-description">Segurança total: crie um ponto de restauração antes de aplicar otimizações.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h3 class="feature-title">Otimização completa</h3>
-                    <p class="feature-description">CPU, GPU, HDD/SSD, RAM e Windows - tudo otimizado para Point Blank.</p>
-                </div>
+    <!-- Seção de Navegação -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="HuskyFPS" class="logo-img">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#features" class="nav-link">Otimizações</a>
+                <a href="#testimonials" class="nav-link">Depoimentos</a>
+                <a href="#pricing" class="nav-link">Planos</a>
+                <a href="#community" class="nav-link">Comunidade</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn btn-outline login-none">ENTRAR</button>
+                <button class="btn btn-primary">ASSINE AGORA</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section class="optimization" id="optimization">
+
+
+
+
+    <!-- Seção Hero (Banner Principal) -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
         <div class="container">
-            <h2 class="section-title">Otimização Completa</h2>
-            <div class="optimization-content">
-                <div class="optimization-image">
-                    <img src="https://i.imgur.com/ybYC9rT.png" alt="HUSKY FPS Optimization" style="width: 100%; max-width: 550px; margin-bottom: 20px;">
-                    
+
+
+
+
+            <div class="hero-content">
+                <!-- Título com animação de digitação e altura fixa -->
+                <div class="hero-title-container">
+                    <!--
+                    <h1 class="hero-title">
+                        <span id="typed-text" class="title-text"></span>
+                    </h1>
+                    -->
+
+                    <main class="text-container">
+                        <svg class="text-stroke" viewBox="0 0 4000 1000" width="100%" height="auto"
+                            preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                                <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#f38333">
+                                        <animate attributeName="stop-color" values="#f38333; #f8f9fa; #f38333" dur="6s"
+                                            repeatCount="indefinite" />
+                                    </stop>
+
+                                </linearGradient>
+                            </defs>
+                            <text x="2000" y="400">
+                                <tspan x="2000" dy="0">Macro, Crosshair – Máximo Desempenho</tspan>
+                                <tspan x="2000" dy="200">e Máxima Fluidez.</tspan>
+                            </text>
+                        </svg>
+                    </main>
                 </div>
-                <div class="optimization-text">
-                    <h2>Otimizações Poderosas</h2>
-                    <ul class="optimization-list">
-                        <li>CPU — desempenho máximo para evitar quedas de FPS</li>
-    <li>GPU — gráficos mais fluidos e estáveis</li>
-    <li>HDD / SSD — carregamento mais rápido de mapas e recursos</li>
-    <li>MEMÓRIA RAM — gerenciamento inteligente para evitar travamentos</li>
-    <li>WINDOWS — sistema ajustado para o melhor desempenho no PB</li>
-    <li>TEMPO DE RESPOSTA — comandos mais rápidos, reação instantânea</li>
-    <li>PING — redução de latência, conexão mais estável nos servidores!</li>
-    <li>Optimize Visuals for Performance — Jogue com mas leveza....</li>
-    <li>🔥 Macro Integrado — Disparos mais rápidos e precisos com suporte total ao PB! 🔥
-Agora com suporte completo aos principais estilos de jogo:
-✅ Rifle & Sub — Controle de recoil inteligente para rajadas precisas
-✅ Sniper — Disparo perfeito com sincronização milimétrica
-✅ Shotgun — Resposta rápida e poder de fogo máximo a cada clique
-🎯 Personalize delays e modos como quiser
-🖱️ Compatível com botões 4 e 5 do mouse para plantar e usar bomba como a pistola!
-🛡️ Seguro, leve e fácil de usar!</li>
-    <li>Estabilidade aprimorada — Funciona ainda melhor em PCs de baixa performance!</li>
-    <li>RENDERIZAÇÃO AVANÇADA — Tecnologia que elimina engasgos e garante FPS estável</li>
-    <li>CROSSHAIR PROFISSIONAL — Mira personalizável com 10 estilos</li>
-                    </ul>
+
+
+
+
+
+
+
+
+
+
+                <!-- Wrapper do vídeo -->
+                <div class="video-wrapper">
+                    <div class="video-box">
+                        <div class="video-line">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/PHTDiUjUTmw?si=pZ7gKPrVdp2h7Je5"
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <div class="video-overlay" id="videoOverlay"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+            <!-- Botões da seção Hero -->
+            <div class="hero-buttons">
+                <div class="btn-container"><button class="btn-teste">PEÇA SEU TESTE AGORA !</button></div>
+
+                <div class="wave-wrapper">
+                    <a class="wave-button" href="https://www.youtube.com/embed/PHTDiUjUTmw?si=pZ7gKPrVdp2h7Je5"
+                        target="_blank" aria-label="Download">
+                        <!-- Ícone SVG de download -->
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M5 20h14v-2H5v2zm7-18c-.55 0-1 .45-1 1v10.17l-3.59-3.58L7 12l5 5 5-5-1.41-1.41L13 13.17V3c0-.55-.45-1-1-1z" />
+                        </svg>
+                    </a>
+                </div>
+
             </div>
         </div>
+
     </section>
 
-    <section class="features">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Seção de Otimizações (Features) -->
+    <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">Funções Essenciais para o PB</h2>
+            <div class="section-header">
+                <div class="badge">RECURSOS PREMIUM</div>
+                <h2 class="section-title">
+                    ELEVE SEU JOGO COM HUSKYFPS PARA
+                    <span class="gradient-text">POINT BLANK</span>
+                </h2>
+                <p class="section-description">
+                    Descubra os recursos avançados do HuskyFPS e transforme sua experiência no Point Blank.
+                    Jogue como um profissional com apenas alguns cliques.
+                </p>
+            </div>
+
             <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">💥</div>
-                    <h3 class="feature-title">FPS MAX</h3>
-                    <p class="feature-description">Desbloqueio total de frames por segundo para uma experiência mais fluida.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/fluidez_maxima.png" alt="">
+                    </div>
+                    <h3 class="feature-title">FPS ILIMITADO</h3>
+                    <p class="feature-description">
+                        Desbloqueie o poder total do seu jogo com FPS ilimitado, elevando drasticamente a fluidez para
+                        uma experiência excepcional.
+                    </p>
                 </div>
 
-                <div class="feature-item">
-                    <div class="feature-icon">🎮</div>
-                    <h3 class="feature-title">TELA CHEIA automática</h3>
-                    <p class="feature-description">Jogue sem distrações com a ativação automática do modo tela cheia.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/full_screen.png" alt="">
+                    </div>
+                    <h3 class="feature-title">FULL SCREEN</h3>
+                    <p class="feature-description">
+                        Jogue em modo de tela cheia e diminua o inputlag no Windows 10 e 11.
+                    </p>
                 </div>
 
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <h3 class="feature-title">FAST SERVER</h3>
-                    <p class="feature-description">Conexão rápida com os melhores servidores para reduzir latência.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">⚙️</div>
-                    <h3 class="feature-title">GAMER OPTIMIZER</h3>
-                    <p class="feature-description">Ajustes avançados focados no Point Blank para performance máxima.</p>
-                </div>
-
-                <div class="feature-item">
-                    <div class="feature-icon">🔄</div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/fps_ilimitado.png" alt="">
+                    </div>
                     <h3 class="feature-title">FLUIDEZ MÁXIMA</h3>
-                    <p class="feature-description">Gameplay sem engasgos, suave e estável para melhor experiência.</p>
+                    <p class="feature-description">
+                        Desfrute de uma experiência de jogo suave e sem atrasos, com otimizações que garantem a máxima
+                        fluidez e resposta rápida.
+                    </p>
                 </div>
 
-                <div class="feature-item">
-                    <div class="feature-icon">🖌️</div>
-                    <h3 class="feature-title">Optimize Visuals for Performance</h3>
-                    <p class="feature-description">Jogo com mais leveza.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/crosshair.png" alt="">
+                    </div>
+                    <h3 class="feature-title">MIRAS CUSTOMIZADAS</h3>
+                    <p class="feature-description">
+                        Personalize suas miras com nicks destacados em roxo para fácil identificação.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/map_loading.png" alt="">
+                    </div>
+                    <h3 class="feature-title">INSTANT MAP LOADER</h3>
+                    <p class="feature-description">
+                        Carregue mapas instantaneamente para que você aproveite cada segundo no campo de batalha.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/angulo.png" alt="">
+                    </div>
+                    <h3 class="feature-title">ÂNGULO 100%</h3>
+                    <p class="feature-description">
+                        Com o Ângulo 100%, sua experiência de jogo se torna mais imersiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Otimização do Sistema -->
+    <section id="system-optimization" class="features system-features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    OTIMIZAÇÃO DO SISTEMA DO
+                    <span class="gradient-text"><i class="fa-brands fa-windows"></i></span>
+                </h2>
+                <p class="section-description">
+                    Otimizações avançadas do sistema Windows para maximizar o desempenho do Point Blank.
+                    Transforme seu PC em uma máquina de guerra.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/processors.png" alt="">
+                    </div>
+                    <h3 class="feature-title">CPU BOOST</h3>
+                    <p class="feature-description">
+                        Desempenho máximo do processador para evitar quedas de FPS.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/ram.png" alt="">
+                    </div>
+                    <h3 class="feature-title">RAM OPTIMIZATION
+                    </h3>
+                    <p class="feature-description">
+                        Gerencie o uso de RAM, evitando gargalos e melhorando a resposta do sistema.
+                    </p>
+                </div>
+
+                                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/video-card.png" alt="">
+                    </div>
+                    <h3 class="feature-title">OPTIMIZATION</h3>
+                    <p class="feature-description">
+                        Maximize o desempenho da sua placa gráfica, garantindo gráficos melhores e jogabilidade fluida.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/game.png" alt="">
+                    </div>
+                    <h3 class="feature-title">GAME OPTIMIZATION</h3>
+                    <p class="feature-description">
+                        Configurações otimizadas para o máximo desempenho em seus jogos favoritos.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/fpsboost.png" alt="">
+                    </div>
+                    <h3 class="feature-title">FPS GAME BOSTER</h3>
+                    <p class="feature-description">
+                        Otimizações específicas para PointBlank, com máxima fluidez e desbloqueio de FPS.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/wireless-mouse.png" alt="">
+                    </div>
+                    <h3 class="feature-title">MOUSE OPTIMIZATION</h3>
+                    <p class="feature-description">
+                        Otimização da rede para reduzir ping e melhorar conexão.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img class="feature-icon" src="img/keyboard.png" alt="">
+                    </div>
+                    <h3 class="feature-title">OPTIMIZATION</h3>
+                    <p class="feature-description">
+                        Reduza o tempo de resposta do teclado e melhore sua performance em jogos competitivos.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-<section class="features" style="background-color: #0a0a0a;">
-    <div class="container">
-        <h2 class="section-title">Pré-visualização das Funções</h2>
-        <div class="slider-container" style="position: relative; overflow: hidden; border-radius: 10px; width: 100%; max-width: 600px; margin: 0 auto;">
-            <div class="slider-track" id="slider-track" style="display: flex; transition: transform 0.5s ease;">
-                
-                <div class="slide" style="flex: 0 0 100%;">
-                    <img src="https://i.ibb.co/2071C479/sddsss3.png" style="width: 100%; max-height: 300px; object-fit: contain;">
-                </div>
-                <div class="slide" style="flex: 0 0 100%;">
-                    <img src="https://i.ibb.co/YB5Hqk0C/sddsss4.png" style="width: 100%; max-height: 300px; object-fit: contain;">
-                </div>
-                <div class="slide" style="flex: 0 0 100%;">
-                    <img src="https://i.ibb.co/1fwKSXhC/sddsss5.png" style="width: 100%; max-height: 300px; object-fit: contain;">
-                </div>
-                
-                <div class="slide" style="flex: 0 0 100%;">
-                    <img src="https://i.ibb.co/NgLF5vQB/sddsss.png" style="width: 100%; max-height: 300px; object-fit: contain;">
-                </div>
-                <div class="slide" style="flex: 0 0 100%;">
-                    <img src="https://i.ibb.co/XxjfwzZj/sddsss2.png" style="width: 100%; max-height: 300px; object-fit: contain;">
-                </div>
-                <div class="slide" style="flex: 0 0 100%;">
-                    <img src="https://i.ibb.co/LdW5ggw7/sddsss6.png" style="width: 100%; max-height: 300px; object-fit: contain;">
-                </div>
+    <!-- Seção de Experiência -->
+    <section class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    VELOCIDADE E PRECISÃO:
+                    <span class="gradient-text">A EXPERIÊNCIA HUSKYFPS</span>
+                </h2>
+                <p class="section-description">
+                    Eleve seu gameplay com o HuskyFPS. Desempenho otimizado, interfaces intuitivas e resultados que
+                    fazem a diferença agora!
+                </p>
             </div>
 
-            <!-- Botões -->
-            <!-- Botão Anterior -->
-<button id="prevButton" onclick="prevSlide()" 
-    style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">
-    ❮
-</button>
+            <div class="experience-content">
+                <div class="experience-features">
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="experience-text">
+                            <h3>Otimizações Avançadas</h3>
+                            <p>Sistema completo de otimização que maximiza o desempenho do seu PC especificamente para
+                                Point Blank.</p>
+                        </div>
+                    </div>
 
-<!-- Botão Próximo -->
-<button id="nextButton" onclick="nextSlide()" 
-    style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; font-size: 20px; cursor: pointer;">
-    ❯
-</button>
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="experience-text">
+                            <h3>Interface Intuitiva</h3>
+                            <p>Painel de controle simples e eficiente que permite aplicar todas as otimizações com
+                                apenas alguns cliques.</p>
+                        </div>
+                    </div>
 
-           <div style="text-align:center; color:white; margin-top:10px;">
-    <span id="slide-indicator">Slide 1 de 9</span>
-</div> 
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <div class="experience-text">
+                            <h3>Resultados Imediatos</h3>
+                            <p>Sinta a diferença instantaneamente com melhorias significativas no FPS e redução do input
+                                lag.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-image">
+                    <img src="img/game_art_1.jpg" alt="Point Blank Gameplay" class="gameplay-image">
+                </div>
+            </div>
         </div>
-        
-    </div>
-</section>
-
-
-<section style="background-color: #111; padding: 20px 0; text-align: center; border-top: 2px solid #FF5500; border-bottom: 2px solid #FF5500;">
-  <div class="container">
-    <h2 class="fade-title">🔧 UPDATE 9.4 Disponível! 🚀</h2>
-
-<style>
-@font-face {
-  font-family: 'Digital7Mono';
-  src: url('fonts/digital-7 (mono).ttf') format('truetype');
-}
-
-.fade-title {
-  font-family: 'Digital7Mono', monospace;
-  font-weight: bold;
-  animation: colorFade 3s infinite;
-}
-
-@keyframes colorFade {
-  0%   { color: orange; }
-  33%  { color: orangered; }
-  66%  { color: white; }
-  100% { color: orange; }
-}
-</style>
-
-    <p style="color: #ccc; font-size: 1.1rem; max-width: 900px; margin: 10px auto;">
-      A nova versão traz um visual totalmente renovado, bugs corrigidos e automação completa! Mais leve, mais rápido, mais inteligente.
-    </p>
-  </div>
-</section>
-
-    <section class="download" id="download">
-        <div class="container">
-            <h2>Baixe o HUSKY FPS 9.4 Agora!</h2>
-            <p>Seja mais rápido, preciso e imbatível no Point Blank! Feito especialmente para quem quer vencer!</p>
-            <a href="https://discord.com/channels/1392305724398506175/1393282123728687214" class="cta-button" target="_blank">DOWNLOAD</a>
-            
-<div style="margin-top: 20px; background-color: #fff4e5; color: #b35b00; padding: 15px; border-left: 5px solid #f0a500;">
-            ⚠️ <strong>Aviso Importante:</strong><br>
-            O Windows Defender pode identificar o macro como ameaça (falso positivo).<br>
-            Para evitar que o Windows Defender bloqueie o programa, recomendamos usar o <a href="https://www.sordum.org/9480/defender-control-v2-1/" target="_blank" style="color:#b35b00; text-decoration: underline;">dControl</a> para desativar temporariamente o Windows Defender.<br>
-            Assim, ele não será reativado automaticamente após o reinício do sistema.<br>
-            Lembre-se de reativar o Windows Defender após usar o programa para manter seu sistema protegido.
-        </div>
-            
-         <!-- Botão do VirusTotal -->
-        <div style="margin-top: 20px;">
-            <a href="https://www.virustotal.com/gui/file/f3e02f34bebee9533df6ffe5a816ef2ecd5dae9c40c5c0a58dd1c9736c6ef73e" 
-               target="_blank" 
-               style="display: inline-block; padding: 10px 20px; background-color: #4a90e2; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                Verificar no VirusTotal 🔍
-            </a>
-        </div>
-
-
-</div>
     </section>
-                
-</section>
 
-<p>.</p>
-        <center></div>
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/_Ltz6G2b1Jo?autoplay=1&mute=1" 
-    title="YouTube video player" 
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-</iframe>
-    
-<div class="produto">
-  <div class="imagem-container">
-    <img src="https://i.ibb.co/XxjfwzZj/sddsss2.png" alt="HUSKY FPS">
-    <div class="desconto">-35,5%</div>
-  </div>
-  <button onclick="comprarKey()">Entre no Discord</button>
-</div>
-
-<script>
-  function comprarKey() {
-    window.open("https://discord.gg/TuTbJZw6", "_blank");
-  }
-</script>
-
-<style>
-  /* ESTILOS DO PRODUTO */
-  .produto {
-    width: 300px;
-    border: 1px solid #333;
-    padding: 16px;
-    text-align: center;
-    margin: 20px auto;
-    border-radius: 10px;
-    background-color: #111;
-    position: relative;
-  }
-
-  .imagem-container {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-  }
-
-  .produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    border: 1px solid #444;
-  }
-
-  .desconto {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    background-color: #FF5500;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 15px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 2px 3px rgba(0,0,0,0.5);
-  }
-
-  /* ANIMAÇÃO HUSKY FPS */
-  @font-face {
-    font-family: 'Digital7Mono';
-    src: url('https://www.dafontfree.net/data/10/10778/digital-7 (mono).ttf') format('truetype');
-  }
-
-  .fade-title {
-    font-family: 'Digital7Mono', 'Courier New', monospace;
-    font-weight: bold;
-    font-size: 24px;
-    margin: 5px 0 3px;
-    animation: colorFade 3s infinite;
-    text-shadow: 0 0 5px rgba(255,85,0,0.7);
-  }
-
-  @keyframes colorFade {
-    0%   { color: #FF0000; }
-    33%  { color: #FF5500; }
-    66%  { color: #FFFFFF; }
-    100% { color: #FF0000; }
-  }
-
-  .produto p {
-    font-size: 13px;
-    color: #CCC;
-    margin: 5px 0;
-  }
-
-  .produto button {
-    margin-top: 6px;
-    padding: 6px 12px;
-    background-color: #FF5500;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-
-  .produto button:hover {
-    background-color: #E04B00;
-  }
-</style>
-        
-    </section>
-<center>
-     
-
-<!-- SEÇÃO DE COMENTÁRIOS SOBRE POINT BLANK COM SLIDER E SETAS -->
-<section id="pb-feedbacks" style="padding: 40px 20px; background-color: #0f0f0f;">
-  <h2 style="color: #00ffff; text-align: center; font-family: 'Segoe UI', sans-serif; margin-bottom: 30px;">
-    Comentários sobre HUSKY FPS!
-  </h2>
-
-  <div class="slider-container" style="position: relative; max-width: 700px; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #00ffff;">
-
-    <!-- Slides -->
-<div class="slides" style="display: flex; transition: transform 0.5s ease-in-out;">
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">🎯 <strong style="color:#00ffff;">@SniperPro:</strong> "Depois que usei os tweaks, meu PB ficou lisinho! FPS cravado e sem travadas no meio das partidas."</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">🔥 <strong style="color:#00ffff;">@Z8Veterano:</strong> "Jogo PB desde 2012 e nunca vi um boost tão simples e eficaz como esse. Recomendo demais."</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">💻 <strong style="color:#00ffff;">@LagZero:</strong> "Melhorou meu input lag no PB e agora consigo dar HS com mais consistência. Valeu HUSKY!"</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">🚀 <strong style="color:#00ffff;">@PlayerPB:</strong> "Os tweaks do site realmente fazem diferença. Não acredito que joguei tanto tempo sem isso."</p>
-  </div>
-  <!-- Novos slides adicionados -->
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">🎮 <strong style="color:#00ffff;">@HeadshotKing:</strong> "O macro integrado é surreal! Disparos precisos com qualquer arma, especialmente com sniper - HS garantido!"</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">✨ <strong style="color:#00ffff;">@CrosshairPro:</strong> "O crosshair personalizável mudou meu jogo! 10 estilos diferentes e ajuste milimétrico da cor e tamanho."</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">⚡ <strong style="color:#00ffff;">@FPSBoost:</strong> "Depois do desbloqueio de FPS, meu jogo saltou de 60 para 999fps! Diferença absurda na fluidez."</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">🖱️ <strong style="color:#00ffff;">@MacroUser:</strong> "O macro para rifles é perfeito! Controle de recoil automático que não é detectável como cheat."</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">👁️ <strong style="color:#00ffff;">@AimPro:</strong> "Crosshair dinâmico que muda de cor quando o inimigo está na mira - revolucionário!"</p>
-  </div>
-  <div class="slide" style="min-width: 100%; background-color: #1a1a1a; padding: 40px;">
-    <p style="color: #ffffff; font-size: 1.1rem;">💯 <strong style="color:#00ffff;">@CompetitivePB:</strong> "FPS travado em 240hz + crosshair profissional = vantagem competitiva real!"</p>
-  </div>
-</div>
-
-    <!-- Setas de navegação -->
-    <button id="prevBtn" style="
-      position: absolute;
-      top: 50%;
-      left: -40px;
-      transform: translateY(-50%);
-      background-color: rgba(0,255,255,0.2);
-      border: none;
-      color: #00ffff;
-      font-size: 28px;
-      cursor: pointer;
-      border-radius: 50%;
-      padding: 12px;
-    ">&#10094;</button>
-
-    <button id="nextBtn" style="
-      position: absolute;
-      top: 50%;
-      right: -40px;
-      transform: translateY(-50%);
-      background-color: rgba(0,255,255,0.2);
-      border: none;
-      color: #00ffff;
-      font-size: 28px;
-      cursor: pointer;
-      border-radius: 50%;
-      padding: 12px;
-    ">&#10095;</button>
-
-  </div>
-</section>
-
-<!-- JavaScript corrigido com loop infinito suave -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelector(".slides");
-    const slideCount = document.querySelectorAll(".slide").length;
-    let currentIndex = 0;
-    let slideInterval;
-    let isTransitioning = false;
-
-    // Clona o primeiro e último slides para criar um efeito de loop contínuo
-    const firstSlide = slides.firstElementChild.cloneNode(true);
-    const lastSlide = slides.lastElementChild.cloneNode(true);
-    slides.appendChild(firstSlide);
-    slides.insertBefore(lastSlide, slides.firstElementChild);
-    
-    // Ajusta a posição inicial para o slide "real" primeiro
-    currentIndex = 1;
-    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-    function updateSlide() {
-      isTransitioning = true;
-      slides.style.transition = "transform 0.5s ease-in-out";
-      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-      
-      // Remove a transição após terminar a animação
-      setTimeout(() => {
-        isTransitioning = false;
-        
-        // Se estiver no clone do primeiro slide, volta para o real sem animação
-        if (currentIndex === slideCount + 1) {
-          slides.style.transition = "none";
-          currentIndex = 1;
-          slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-        
-        // Se estiver no clone do último slide, volta para o real sem animação
-        if (currentIndex === 0) {
-          slides.style.transition = "none";
-          currentIndex = slideCount;
-          sslides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-      }, 500);
-    }
-
-    function nextSlide() {
-      if (isTransitioning) return;
-      currentIndex++;
-      updateSlide();
-    }
-
-    function prevSlide() {
-      if (isTransitioning) return;
-      currentIndex--;
-      updateSlide();
-    }
-
-    // Inicia o slider automático
-    function startSlider() {
-      slideInterval = setInterval(() => {
-        nextSlide();
-      }, 4000);
-    }
-
-    // Event listeners para os botões
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      clearInterval(slideInterval);
-      nextSlide();
-      startSlider();
-    });
-
-    document.getElementById("prevBtn").addEventListener("click", () => {
-      clearInterval(slideInterval);
-      prevSlide();
-      startSlider();
-    });
-
-    // Inicia o slider
-    startSlider();
-  });
-</script>
-<div style="margin-top: 30px; padding: 30px; background: #1c1c1c; border-radius: 10px;">
-  <h3 style="color: #FFD700; font-size: 1.5rem; margin-bottom: 15px;">⚙️ Instalação Obrigatória</h3>
-  <p>Antes de rodar o programa, instale os pacotes abaixo:</p>
-
-    <p style="margin-top: 15px;"><strong>🎮 .NET Framework 4.9.4</strong><br>
-    <a href="https://github.com/huskynolag/hnlpb/releases/download/1.2/ndp48-web.exe" style="color: #00ffff;" target="_blank">📥 Baixar .NET Framework 4.9.4</a>
-  </p>
-
-  <p style="margin-top: 25px; color: #ffcc00; font-size: 1.1rem;">⚠️ Sem esses pacotes, o programa pode travar, dar erro ou nem abrir.<br><strong>Instale tudo ANTES de usar.</strong></p>
-</div>
-</center>
-
-    <div id="contadorOnline">
-    <span>🟢 Online: <span id="contador-numero">...</span></span>
-</div>
-
-<style>
-#contadorOnline {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 102, 204, 0.9);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    box-shadow: 0 0 10px #000;
-    z-index: 9999;
-}
-</style>
-
-<script>
-function atualizarContador() {
-    const base = 19;      // Valor central
-    const variacao = 5;     // Pode variar de -3 até +3
-
-    const agora = new Date();
-    const segundos = Math.floor(agora.getSeconds() / 10); // muda a cada 10s
-    const minutos = agora.getMinutes();
-
-    // Simulação determinística (mesmo número para todos)
-    const seed = (minutos * 6 + segundos) % (variacao * 2 + 1); // de 0 até 6
-    const valorFinal = base - variacao + seed;
-
-    document.getElementById("contador-numero").textContent = valorFinal;
-}
-
-atualizarContador();
-setInterval(atualizarContador, 10000);
-</script>
-
-
-    <footer>
+    <!-- Seção de Depoimentos -->
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <p>© 2025 HUSKY FPS 9.4 - A melhor otimização para Point Blank</p>
+            <div class="section-header">
+                <h2 class="section-title">
+                    O QUE NOSSOS
+                    <span class="gradient-text">JOGADORES DIZEM</span>
+                </h2>
+                <p class="section-description">
+                    Veja como o HuskyFPS transformou a experiência de jogo de milhares de jogadores de Point Blank.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Minha jogabilidade no Point Blank ficou muito mais fluida com o HuskyFPS. Jogue com mais
+                        fluidez e respostas rápidas!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>João "ProGamer" Silva</h4>
+                        <span>Jogador de Point Blank</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "O HuskyFPS suavizou minha experiência em Point Blank. Sinta a diferença na performance!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Maria "Sniper" Santos</h4>
+                        <span>Jogadora de Point Blank</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "O HuskyFPS transformou meu jogo, elevando meu desempenho ao nível profissional. Experimente e
+                        sinta a diferença!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Carlos "Rush" Oliveira</h4>
+                        <span>Jogador de Point Blank</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "O HuskyFPS aumentou a fluidez dos meus jogos. Veja seus jogos rodarem como nunca!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Ana "Clutch" Costa</h4>
+                        <span>Jogadora de Point Blank</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "A performance com o plano Advanced é incrível! Sinta a diferença na sua jogabilidade."
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Pedro "Ace" Lima</h4>
+                        <span>Jogador de Point Blank</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "O HuskyFPS elevou a fluidez do meu Point Blank. Experimente e veja a diferença!"
+                    </p>
+                    <div class="testimonial-author">
+                        <h4>Lucas "Frag" Ferreira</h4>
+                        <span>Jogador de Point Blank</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção da Comunidade -->
+    <section id="community" class="community">
+        <div class="container">
+            <div class="community-content">
+                <div class="community-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h2 class="section-title">
+                    Junte-se à Comunidade <span class="gradient-text">HuskyFPS</span> no Discord!
+                </h2>
+
+                <button class="btn btn-secondary btn-large">
+                    <i class="fab fa-discord"></i>
+                    Entrar na Comunidade
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Preços (Planos) -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    ESCOLHA O PLANO PERFEITO PARA VOCÊ!
+                </h2>
+                <p class="section-description">
+                    Descubra nossos planos de assinatura e eleve seu jogo. Encontre o que você precisa para dominar o
+                    Point Blank.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-discount">-33%</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">BASIC</h3>
+                        <div class="pricing-duration">30 Dias</div>
+                        <div class="pricing-price">
+                            <span class="old-price">R$29,90</span>
+                            <span class="current-price">R$19,90</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> BOOSTER Point Blank</li>
+                        <li><i class="fas fa-check"></i> Configurações do Windows</li>
+                        <li><i class="fas fa-check"></i> Otimizações de Jogos</li>
+                        <li><i class="fas fa-check"></i> Otimização da GPU</li>
+                        <li><i class="fas fa-check"></i> Informações do Hardware</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full">Escolher BASIC</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="pricing-badge">MAIS POPULAR</div>
+                    <div class="pricing-discount">-33%</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">ADVANCED</h3>
+                        <div class="pricing-duration">90 Dias</div>
+                        <div class="pricing-price">
+                            <span class="old-price">R$59,90</span>
+                            <span class="current-price">R$39,90</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> BOOSTER Point Blank</li>
+                        <li><i class="fas fa-check"></i> Otimizações de Jogos</li>
+                        <li><i class="fas fa-check"></i> Otimização da GPU</li>
+                        <li><i class="fas fa-check"></i> Informações do Hardware</li>
+
+
+                        <li><i class="fas fa-check"></i> FPS GAME BOOSTER</li>
+                    </ul>
+                    <button class="btn btn-accent btn-full">Escolher ADVANCED</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-discount">-30%</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">PRO</h3>
+                        <div class="pricing-duration">365 Dias</div>
+                        <div class="pricing-price">
+                            <span class="old-price">R$99,90</span>
+                            <span class="current-price">R$69,90</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> BOOSTER Point Blank</li>
+                        <li><i class="fas fa-check"></i> Otimizações de Jogos</li>
+                        <li><i class="fas fa-check"></i> Otimização da GPU</li>
+                        <li><i class="fas fa-check"></i> Informações do Hardware</li>
+
+
+                        <li><i class="fas fa-check"></i> FPS GAME BOOSTER</li>
+                        <li><i class="fas fa-check"></i> Suporte Prioritário</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full">Escolher PRO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção CTA (Chamada para Ação) -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title">
+                    Solicite seu <span class="highlight-accent">Teste Grátis</span> Agora!
+                </h2>
+                <p class="section-description">
+                    Deseja testar o HuskyFPS gratuitamente?
+                </p>
+                <button class="btn btn-primary btn-large">
+                    Iniciar Conversa
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção de Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="HuskyFPS" class="footer-logo-img">
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Suporte</a>
+                    <a href="#" class="footer-link">Termos</a>
+                    <a href="#" class="footer-link">Privacidade</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HuskyFPS. Todos os direitos reservados. Otimize seu Point Blank com a melhor tecnologia.
+                </p>
+            </div>
         </div>
     </footer>
 
-
-    <script>
-    let currentSlide = 0;
-    const sliderTrack = document.getElementById("slider-track");
-    const slides = sliderTrack.querySelectorAll(".slide");
-    const totalSlides = slides.length;
-
-    let autoSlideInterval;
-    let isPaused = false;
-
-    function updateSlide() {
-    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-    document.getElementById("slide-indicator").textContent = `Slide ${currentSlide + 1} de ${totalSlides}`;
-    }
-
-    function nextSlide() {
-    console.log("Próximo slide"); // Adicione esta linha
-    currentSlide = (currentSlide + 1) % totalSlides;
-    updateSlide();
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlide();
-    }
-
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(() => {
-            if (!isPaused) nextSlide();
-        }, 5000);
-    }
-
-    function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
-    }
-
-    function pauseSlide() {
-        isPaused = true;
-    }
-
-    function resumeSlide() {
-        isPaused = false;
-    }
-
-    // Iniciar o slide automático
-    startAutoSlide();
-
-    // Pegar os botões
-    const prevButton = document.getElementById("prevButton");
-    const nextButton = document.getElementById("nextButton");
-
-    // Adicionar eventos de pausa
-    [prevButton, nextButton].forEach(button => {
-        button.addEventListener("mouseenter", pauseSlide);
-        button.addEventListener("mouseleave", resumeSlide);
-    });
-</script>
-
-<script>
-    // Lista de chaves expiradas
-    const chavesExpiradas = [
-        "HNLPB-TESTE-0sPdsf-8jG9Bi-T3fNdu-gHfmgg",
-        "HNLPB-TESTE-9jvqR2-RJs7B5-A1TxVJ-Nq7xFO",
-        "HNLPB-TESTE-8zcteC-iEY7zm-7Y1tEQ-sTLOr7",
-        "HNLPB-TESTE-ML6GvX-Sinjs5-CftiVp-WnwSz5",
-        "HNLPB-TESTE-AKh1dV-uqa6d5-TzbEVW-HhJ92t",
-        "HNLPB-TESTE-uPofct-YkmEX9-ge4svf-a7RVQA"
-    ];
-
-    // Função que percorre os itens e marca como expirado
-    window.onload = function () {
-        const itens = document.querySelectorAll("#lista-keys li");
-        itens.forEach(item => {
-            const chave = item.querySelector("span").innerText.trim();
-            if (chavesExpiradas.includes(chave)) {
-                const botao = item.querySelector("button");
-                botao.disabled = true;
-                botao.innerText = "Expirada";
-                botao.style.backgroundColor = "gray";
-                botao.style.cursor = "not-allowed";
-
-                const mensagem = document.createElement("span");
-                mensagem.innerText = " 🔒 Chave encerrada";
-                mensagem.style.color = "red";
-                mensagem.style.fontWeight = "bold";
-                mensagem.style.marginLeft = "10px";
-                item.appendChild(mensagem);
-            }
-        });
-    };
-
-    // Função copiar (exemplo)
-    function copyKey(button) {
-        const key = button.parentElement.querySelector("span").innerText;
-        navigator.clipboard.writeText(key).then(() => {
-            alert("Chave copiada: " + key);
-        });
-    }
-</script>
-
-
-
-
-
+    <script src="script.js"></script>
 </body>
 
 </html>
