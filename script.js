@@ -1,3 +1,15 @@
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".experience-image.slider .slide");
+
+    function showNextSlide() {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + 1) % slides.length;
+        slides[slideIndex].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 3000); // Troca a cada 3 segundos
+</script>
 // Este script gerencia a navegação, animações e interatividade da página.
 
 document.addEventListener("DOMContentLoaded", function () {
