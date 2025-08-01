@@ -5,14 +5,20 @@
 
 <style>
     .video-slide {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    border: none;
+    display: none;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .video-slide.active {
     display: block;
+    z-index: 10;
+    pointer-events: auto;
 }
 </style>
 <style>
@@ -734,28 +740,35 @@
 <script>
     let players = [];
     let current = 0;
+    let iframes = [];
 
     function onYouTubeIframeAPIReady() {
-        const iframes = document.querySelectorAll('.video-slide');
+        iframes = document.querySelectorAll('.video-slide');
 
         iframes.forEach((iframe, index) => {
-            const player = new YT.Player(iframe, {
+            players[index] = new YT.Player(iframe, {
                 events: {
                     'onStateChange': (event) => {
-                        // 0 significa que o vídeo terminou
-                        if (event.data === 0) {
-                            players[current].stopVideo();
-                            iframe.classList.remove("active");
-                            current = (current + 1) % players.length;
-                            const nextIframe = players[current].getIframe();
-                            nextIframe.classList.add("active");
-                            players[current].playVideo();
+                        if (event.data === YT.PlayerState.ENDED) {
+                            nextVideo(index);
                         }
                     }
                 }
             });
-            players.push(player);
         });
+    }
+
+    function nextVideo(index) {
+        // Para o vídeo atual e remove classe "active"
+        players[index].stopVideo();
+        iframes[index].classList.remove("active");
+
+        // Define o próximo índice
+        current = (index + 1) % players.length;
+
+        // Adiciona a classe "active" e inicia o próximo vídeo
+        iframes[current].classList.add("active");
+        players[current].playVideo();
     }
 
     // Carrega a API do YouTube
@@ -763,6 +776,7 @@
     tag.src = "https://www.youtube.com/iframe_api";
     document.head.appendChild(tag);
 </script>
+
 
 <script>
     let slideIndex = 0;
