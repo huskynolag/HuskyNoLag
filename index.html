@@ -2,6 +2,27 @@
 <html lang="pt-BR">
 
 <head>
+
+.experience-image.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    overflow: hidden;
+}
+
+.experience-image.slider .slide {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.experience-image.slider .slide.active {
+    opacity: 1;
+    position: relative;
+}
     <!-- Título que aparece no WhatsApp -->
     <meta property="og:title" content="Husky FPS - Otimize seu Jogo e Ping!">
 
